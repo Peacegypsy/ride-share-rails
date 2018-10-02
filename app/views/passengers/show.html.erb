@@ -3,4 +3,9 @@
 <% else %>
   <h1><%= @passenger.name %></h1>
   <p><%= @passenger.phone_num %> </p>
+
+
+
+  <%= link_to "Edit Passenger #{@passenger.id}", edit_passenger_path(@passenger.id)%>
+<div></div>
 <% end %>

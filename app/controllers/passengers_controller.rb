@@ -26,9 +26,14 @@ class PassengersController < ApplicationController
     end
 
     def edit
+      passenger = Passenger.find_by(id: params[:id].to_i)
+      passenger.update(edit_passenger_path)
+
     end
 
     def update
+      @passenger = Passenger.find_by(id: params[:id].to_i)
+      passenger.update(passenger_path)
     end
 
     def destroy
