@@ -6,7 +6,7 @@ class DriversController < ApplicationController
   def show
   end
 
-end
+
 
   def create
     @driver = Driver.new(name: params[:driver][:name], vin: params[:driver][:vin])
