@@ -1,15 +1,16 @@
 <% if @passenger.nil? %>
-  <h1> 404 Not found</h1>
+<h1> 404 Not found</h1>
 <% else %>
-  <h1><%= @passenger.name %></h1>
-  <p><%= @passenger.phone_num %> </p>
-  <p><% x = 0 %>
-  </p>
+<h1><%= @passenger.name %></h1>
+<p><%= @passenger.phone_num %> </p>
+<p><% x = 0 %></p>
 <p><% @passenger.trips.each do |trip|%>
   Trip ID: <%= trip[:id] %> Trip Date: <%= trip[:date] %> Trip Rating: <%= trip[:rating] %>
-    <p> <% x += trip[:cost]  %><% end %>
- </p><p>Total Spend on Rides:$ <%= x/100.0 %>
- </p>
-  <%= link_to "Edit Passenger #{@passenger.name}:#{@passenger.id}", edit_passenger_path(@passenger.id)%>
-<div></div>
-<% end %>
+  <p> <% x += trip[:cost]  %></p>
+  <% end %>
+  <p>Total Spend on Rides:$ <%= x/100.0 %></p>
+
+  <h4><%= link_to "Edit Passenger #{@passenger.name}:#{@passenger.id}", edit_passenger_path(@passenger.id)%></h4>
+  <h4><%= link_to "Delete", remove_passenger_path(@passenger.id), method: :patch, data: { confirm: "Please confirm that you want to delete this passenger." } %></h4>
+
+  <% end %>

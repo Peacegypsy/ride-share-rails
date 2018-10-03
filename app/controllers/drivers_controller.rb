@@ -1,6 +1,6 @@
 class DriversController < ApplicationController
   def index
-    @drivers = Driver.where("status= 'available'").order(:id)
+    @drivers = Driver.where("status = 'available'").order(:id)
   end
 
   def show
