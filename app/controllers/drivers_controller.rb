@@ -1,6 +1,6 @@
 class DriversController < ApplicationController
   def index
-    @drivers = Driver.all.order(:id)
+    @drivers = Driver.where("status= 'available'").order(:id)
   end
 
   def show
@@ -36,7 +36,11 @@ class DriversController < ApplicationController
     end
   end
 
-  def destroy
+  def change_status
+    id = params[:id]
+    driver = Driver.find_by(id: id)
+    driver.update(status: "unavailable")
+    redirect_to drivers_path
   end
 
 end

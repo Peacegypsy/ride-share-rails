@@ -1,6 +1,6 @@
 class PassengersController < ApplicationController
   def index
-    @passengers = Passenger.all.order(:id)
+    @passengers = Passenger.where("status= 'available'").order(:id)
   end
 
   def show
