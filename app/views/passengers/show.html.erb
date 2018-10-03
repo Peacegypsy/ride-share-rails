@@ -6,7 +6,7 @@
   <p><% x = 0 %>
   </p>
 <p><% @passenger.trips.each do |trip|%>
-  <%= trip[:id] %><%= trip[:date] %><%= trip[:rating] %>
+  Trip ID: <%= trip[:id] %> Trip Date: <%= trip[:date] %> Trip Rating: <%= trip[:rating] %>
     <p> <% x += trip[:cost]  %><% end %>
  </p><p>Total Spend on Rides:$ <%= x/100.0 %>
  </p>

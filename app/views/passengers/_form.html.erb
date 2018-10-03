@@ -1,12 +1,12 @@
-<h1><%= Edit passenger %></h1>
+<h1><%= action_name  %></h1>
 
 <%= form_with model: @passenger, class: "passenger-form" do |f|%>
-
+<p>Please change the following information to update the passenger:</p>
 <%= f.label :name %>
 <%= f.text_field :name %>
 
 <%= f.label :phone_num %>
 <%= f.text_field :phone_num %>
 
-<%= f.submit action_name, class: "task-button" %>
+<%= f.submit button_title, class: "task-button" %>
 <% end %>

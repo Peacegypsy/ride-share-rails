@@ -26,17 +26,22 @@ class PassengersController < ApplicationController
     end
 
     def edit
-      @passenger = Passenger.find_by(id: params[:id].to_i)
-      render :new
-
+        @passenger = Passenger.find(params[:id].to_i)
     end
 
     def update
-      @passenger = Passenger.find_by(id: params[:id].to_i)
-      passenger.update(passenger_path)
+      passenger = Passenger.find_by(id: params[:id].to_i)
+      passenger.update(passenger_params)
+
+      redirect_to passenger_path(passenger.id)
     end
 
     def destroy
     end
 
+  end
+  private
+
+  def passenger_params
+    return params.require(:passenger).permit(:name, :phone_num)
   end
