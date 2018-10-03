@@ -32,11 +32,11 @@ class DriversController < ApplicationController
     if @driver.save
       redirect_to drivers_path
     else
-      render :new
+      render :edit
     end
   end
 
   def destroy
   end
-  
+
 end
