@@ -26,7 +26,7 @@
     <th><%=  trip.passenger_id %></th>
     <th><%=  trip.date %></th>
     <th><%=  trip.rating %></th>
-    <th><%=  "$#{'%.2f' % (trip.cost * 0.01)}" %></th>
+    <th><%=  trip.currency %></th>
   </tr>
   <% end %>
 </table>

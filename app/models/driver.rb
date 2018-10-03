@@ -14,7 +14,6 @@ class Driver < ApplicationRecord
     return '%.2f' % sum
   end
 
-  # driver's average rating
   def average_rating
     ratings = 0
     self.trips.each do |trip|
@@ -26,6 +25,5 @@ class Driver < ApplicationRecord
       return (ratings.to_f / self.trips.length).round(2)
     end
   end
-
 
 end
