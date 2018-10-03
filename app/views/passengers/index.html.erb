@@ -2,5 +2,4 @@
 <h2> RideShare Passengers:  </h2>
 <% @passengers.each do |passenger| %>
 <p><%= link_to "#{passenger.id}: #{passenger.name}", passenger_path(passenger.id) %></p>
-
  <% end %>
