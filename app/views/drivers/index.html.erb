@@ -1,6 +1,7 @@
 <h1>These are the Drivers: </h1>
 <h2> RideShare Drivers:  </h2>
+<% i = 1 %>
 <% @drivers.each do |driver| %>
- <p> Name: <%= driver.name %></p>
-
+  <p>   <%= link_to "#{i}. #{driver[:name]}", driver_path(driver.id) %></p>
+  <% i += 1 %>
  <% end %>
