@@ -1,6 +1,6 @@
 class PassengersController < ApplicationController
   def index
-    @passengers = Passenger.all.order(:id)
+    @passengers = Passenger.where("status = 'available'").order(:id)
   end
 
   def show
@@ -38,8 +38,12 @@ class PassengersController < ApplicationController
     end
   end
 
-    def destroy
-    end
+  def change_status
+    id = params[:id]
+    passenger = Passenger.find_by(id: id)
+    passenger.update(status: "unavailable")
+    redirect_to passengers_path
+  end
 
   end
   private
