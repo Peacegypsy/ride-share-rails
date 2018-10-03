@@ -1,12 +1,12 @@
 class DriversController < ApplicationController
   def index
-    @drivers = Driver.all
+    @drivers = Driver.all.order(:id)
   end
 
   def show
+    id = params[:id]
+    @driver = Driver.find_by(id: id)
   end
-
-end
 
   def create
     @driver = Driver.new(name: params[:driver][:name], vin: params[:driver][:vin])
@@ -22,11 +22,21 @@ end
   end
 
   def edit
+    @driver = Driver.find(params[:id].to_i)
   end
 
   def update
+    @driver = Driver.find(params[:id].to_i)
+    @driver.name = params[:driver][:name]
+    @driver.vin = params[:driver][:vin]
+    if @driver.save
+      redirect_to drivers_path
+    else
+      render :edit
+    end
   end
 
   def destroy
   end
-  end
+
+end

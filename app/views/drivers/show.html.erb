@@ -1,0 +1,38 @@
+<% if @driver.nil? %>
+<h1> 404 Not found</h1>
+<% else %>
+<h3>Driver: <%=@driver[:name]%></h3>
+<h3>Total Earnings: <%="$#{@driver.total_earnings}"%></h3>
+
+<h3>Average Rating: <%= @driver.average_rating %> </h3>
+
+<% if @driver.trips.length == 0  %>
+<h3>Trips: None</h3>
+<% else %>
+<h3>Trips: </h3>
+<table>
+
+  <th>Trip ID</th>
+  <th>Driver ID</th>
+  <th>Passenger ID</th>
+  <th>Date</th>
+  <th>Rating</th>
+  <th>Cost</th>
+
+  <% @driver.trips.each do |trip| %>
+  <tr>
+    <th><%=  trip.id %></th>
+    <th><%=  trip.driver_id  %></th>
+    <th><%=  trip.passenger_id %></th>
+    <th><%=  trip.date %></th>
+    <th><%=  trip.rating %></th>
+    <th><%=  trip.currency %></th>
+  </tr>
+  <% end %>
+</table>
+<h3><%= link_to "Edit", edit_driver_path(@driver.id) %> </h3>
+<h3>Delete</h3>
+
+<% end %>
+
+<% end %>
