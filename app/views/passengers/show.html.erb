@@ -3,8 +3,12 @@
 <% else %>
   <h1><%= @passenger.name %></h1>
   <p><%= @passenger.phone_num %> </p>
+  <p><% x = 0 %>
+  </p>
 <p><% @passenger.trips.each do |trip|%>
-    <p> <%= trip[:cost]  %><% end %>
+  <%= trip[:id] %><%= trip[:date] %><%= trip[:rating] %>
+    <p> <% x += trip[:cost]  %><% end %>
+ </p><p>Total Spend on Rides:$ <%= x/100.0 %>
  </p>
   <%= link_to "Edit Passenger #{@passenger.name}:#{@passenger.id}", edit_passenger_path(@passenger.id)%>
 <div></div>
