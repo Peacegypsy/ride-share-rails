@@ -1,15 +1,48 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+body {
+  padding-top: 60px;
+  background-color: #E0E2DB;
+  font-family: : Helvetica;}
+  p {
+    font-family: : Helvetica;
+    font-size: 1em;
+  }
+  h1 {
+    font-size: 2em;
+    font-family: : Helvetica;
+    color: #46351D;
+  }
+
+  ul > li{
+    display: inline;
+    list-style-type: none;
+    position: sticky;
+    justify-content: center;
+    text-align: center;
+
+  }
+
+  a:link, a:active{
+    color: #5F7470;
+    text-decoration: none;
+    font-family: Helvetica;}
+
+    li :hover{
+      text-decoration: none;
+      color: blue;
+    }
