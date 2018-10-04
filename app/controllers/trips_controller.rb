@@ -12,6 +12,7 @@ class TripsController < ApplicationController
     end
   end
 
+
   def create
     @trip = Trip.new(id: params[:trip][:id], driver_id: params[:trip][:driver_id], passenger_id: params[:trip][:passenger_id], date: params[:trip][:date], rating: params[:trip][:rating], cost: params[:trip][:cost])
     if @trip.save
