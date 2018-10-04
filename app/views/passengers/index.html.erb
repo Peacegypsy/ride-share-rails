@@ -1,5 +1,8 @@
 <h1>These are the Passengers: </h1>
 <h2> RideShare Passengers:  </h2>
 <% @passengers.each do |passenger| %>
-<p><%= link_to "#{passenger.name} #{passenger.id}", passenger_path(passenger.id) %></p>
+<p>
+  <%= image_tag("http://placekitten.com/50/50", :alt =>
+  "kitten") %><%= link_to "#{passenger.name} #{passenger.id}", passenger_path(passenger.id) %>
+</p>
  <% end %>
