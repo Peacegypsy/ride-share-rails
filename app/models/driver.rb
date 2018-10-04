@@ -17,7 +17,7 @@ class Driver < ApplicationRecord
   def average_rating
     ratings = 0
     self.trips.each do |trip|
-      ratings += trip.rating
+      ratings += trip.rating if !(trip.rating.nil?)
     end
     if ratings == 0
       return "Not yet rated"

@@ -3,10 +3,11 @@
 <% else %>
   <h1><%= @trip.id %></h1>
 <%= "Trip date: #{@trip.date}" %>
-<%= link_to "Trip driver: #{@trip.driver.id}"%>
+<%= link_to "Trip driver: #{@trip.driver.id}", driver_path(@trip.driver.id)%>
 
 
-<%= link_to "Trip passenger: #{@trip.passenger_id}" %>
+
+<%= link_to "Trip passenger: #{@trip.passenger_id}", passenger_path(@trip.passenger.id)%>
 
 
 
