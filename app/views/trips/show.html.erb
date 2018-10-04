@@ -1,17 +1,18 @@
 <% if @trip.nil? %>
 <h1> 404 Not found</h1>
 <% else %>
-<h1><%= @trip.id %></h1>
-<%= "Trip date: #{@trip.date}" %>
-<%= link_to "Trip driver: #{@trip.driver.id}", driver_path(@trip.driver.id)%>
+<h1>Trip: <%= @trip.id %></h1>
+<%= "Trip Date: #{@trip.date}" %>
+<%= link_to "Trip Driver: #{@trip.driver.name}", driver_path(@trip.driver.id)%>
 
-<%= link_to "Trip passenger: #{@trip.passenger_id}", passenger_path(@trip.passenger.id)%>
+<%= link_to "Trip Passenger: #{@trip.passenger.name}", passenger_path(@trip.passenger.id)%>
 
-<%= "Trip cost: #{@trip.cost/100.0}." %>
+<%= "Trip Cost: #{@trip.currency}" %>
 <% if @trip.rating == nil%>
 <%= link_to "Rate and Complete Trip", complete_trip_path(@trip.id), method: :patch %>
 <% else %>
-<%= "Trip rating: #{@trip.rating}" %>
+<%= "Trip Rating: #{@trip.rating}" %>
 <% end %>
-<div></div>
+<h4><%= link_to "Edit Trip", edit_trip_path(@trip.id)%></h4>
+<h4><%= link_to "Delete Trip", trip_path(@trip.id), method: :delete, data: { confirm: "Please confirm that you want to delete this trip." } %></h4>
 <% end %>
