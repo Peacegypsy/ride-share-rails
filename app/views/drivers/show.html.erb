@@ -2,6 +2,7 @@
 <h1> 404 Not found</h1>
 <% else %>
 <h3>Driver: <%=@driver[:name]%></h3>
+<h3>Status: <%=@driver[:status]%></h3>
 <h3>Total Earnings: <%="$#{@driver.total_earnings}"%></h3>
 
 <h3>Average Rating: <%= @driver.average_rating %> </h3>
