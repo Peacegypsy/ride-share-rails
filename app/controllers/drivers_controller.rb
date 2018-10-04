@@ -1,6 +1,6 @@
 class DriversController < ApplicationController
   def index
-    @drivers = Driver.where("status = 'available'").order(:id)
+    @drivers = Driver.where("online = true").order(:id)
   end
 
   def show
@@ -40,6 +40,13 @@ class DriversController < ApplicationController
     id = params[:id]
     driver = Driver.find_by(id: id)
     driver.update(status: "unavailable")
+    redirect_to drivers_path
+  end
+
+  def take_offline
+    id = params[:id]
+    driver = Driver.find_by(id: id)
+    driver.update(online: false)
     redirect_to drivers_path
   end
 

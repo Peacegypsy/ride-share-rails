@@ -6,7 +6,7 @@ class TripsController < ApplicationController
 
   def create
     if params[:passenger_id]
-      driver =  Driver.find_by(status: "available")
+      driver =  Driver.find_by(status: "available", online: true)
       if driver.nil?
         render :drivernotfound, status: :not_found
       else
@@ -31,9 +31,11 @@ class TripsController < ApplicationController
   def new
     @trip = Trip.new
   end
+
   def edit
     @trip = Trip.find(params[:id].to_i)
   end
+
   def update
     @trip = Trip.find_by(id: params[:id].to_i)
     if @trip.update(trip_params)
