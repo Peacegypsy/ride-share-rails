@@ -11,7 +11,7 @@
 <% else %>
 <h3>Trips: </h3>
 <table>
-
+  <th>View Trip</th>
   <th>Trip ID</th>
   <th>Driver ID</th>
   <th>Passenger ID</th>
@@ -21,6 +21,7 @@
 
   <% @driver.trips.each do |trip| %>
   <tr>
+    <th><%= link_to "Trip Details", trip_path(trip.id)%></th>
     <th><%=  trip.id %></th>
     <th><%=  trip.driver_id  %></th>
     <th><%=  trip.passenger_id %></th>
