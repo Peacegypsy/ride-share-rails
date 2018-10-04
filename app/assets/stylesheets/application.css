@@ -28,21 +28,21 @@ body {
     color: #46351D;
   }
 
-  ul > li{
+  header {
     display: inline;
     list-style-type: none;
     position: sticky;
     justify-content: center;
     text-align: center;
-
+    font-family: Helvetica;
   }
 
-  a:link, a:active{
-    color: #5F7470;
+  header :link, header :active{
+    color: #483D3F;
     text-decoration: none;
     font-family: Helvetica;}
 
-    li :hover{
+    header :hover{
       text-decoration: none;
       color: blue;
     }
