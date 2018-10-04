@@ -1,0 +1,6 @@
+<h1>These are the Trips: </h1>
+<h2> RideShare Trips:  </h2>
+<% @trips.each do |trip| %>
+<p><%= link_to "Trip ID: #{trip.id}", trip_path(trip.id) %><%= link_to "Date of Ride: #{trip.date}", trip_path(trip.id) %></p> <p><%= link_to "Trip Driver: #{trip.driver_id}", trip_path(trip.id) %> <%= link_to "Trip Passenger: #{trip.passenger_id}", trip_path(trip.id) %><%= link_to "Trip Rating: #{trip.rating}",trip_path(trip.id) %>
+<%= link_to "Trip Cost: $#{trip.cost/100.0}", trip_path(trip.id) %></p>
+ <% end %>

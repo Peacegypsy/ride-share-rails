@@ -1,0 +1,20 @@
+<% if @trip.nil? %>
+  <h1> 404 Not found</h1>
+<% else %>
+  <h1><%= @trip.id %></h1>
+<%= "Trip date: #{@trip.date}" %>
+<%= link_to "Trip driver: #{@trip.driver.id}"%>
+
+
+<%= link_to "Trip passenger: #{@trip.passenger_id}" %>
+
+
+
+<%= "Trip cost: #{@trip.cost/100.0}." %>
+<% if @trip.rating == nil? %>
+  <%= link_to "Edit Trip: #{@trip.id}", edit_trip_path(@trip.id)%>
+  <% else %>
+  <%= "Trip rating: #{@trip.rating}" %>
+  <% end %>
+<div></div>
+<% end %>

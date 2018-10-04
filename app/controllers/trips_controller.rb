@@ -1,7 +1,8 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.all
+    @trips = Trip.all.order(:id)
   end
+
 
   def create
     if params[:passenger_id]
@@ -16,5 +17,34 @@ class TripsController < ApplicationController
       end
     end
   end
+
+
+  def show
+    id = params[:id].to_i
+    @trip = Trip.find_by(id: id)
+
+    if @trip.nil?
+      render :notfound, status: :not_found
+    end
+  end
+
+  def new
+    @trip = Trip.new
+  end
+  def edit
+    @trip = Trip.find(params[:id].to_i)
+  end
+  def update
+    @trip = Trip.find_by(id: params[:id].to_i)
+    if @trip.update(trip_params)
+      redirect_to trip_path(@trip.id)
+    else
+      render :edit
+    end
+  end
+
+end
+def trip_params
+  return params.require(:trip).permit(:rating)
 
 end
