@@ -2,15 +2,16 @@
 <h1> 404 Not found</h1>
 <% else %>
 <h1><%= @passenger.name %></h1>
+
 <p><%= @passenger.phone_num %> </p>
-<p><% x = 0 %></p>
-  Passenger ID : <%= @passenger.id %>
-<p><% @passenger.trips.each do |trip|%>
-  <%= link_to "Trip Details", trip_path(trip.id)%>
-  Trip ID: <%= trip[:id] %> Trip Date: <%= trip[:date] %> Trip Rating: <%= trip[:rating]  %> Trip Cost: <%= trip.currency %>
-  <p> <% x += trip[:cost]  %></p>
+
+<p>  Passenger ID : <%= @passenger.id %> </p>
+
+<% @passenger.trips.each do |trip|%>
+  <p><%= link_to "Trip Details", trip_path(trip.id)%>
+  Trip ID: <%= trip[:id] %> Trip Date: <%= trip[:date] %> Trip Rating: <%= trip[:rating]  %> Trip Cost: <%= trip.currency %></p>
   <% end %>
-  <p>Total Spent on Rides: $<%= x/100.0 %></p>
+  <p>Total Spent on Rides: $<%= @passenger.total_spent %></p>
 
  <h4><%= link_to "Add a New Trip", passenger_trips_path(@passenger.id), method: :post%> </h4>
   <h4><%= link_to "Edit Passenger #{@passenger.name}", edit_passenger_path(@passenger.id)%></h4>
