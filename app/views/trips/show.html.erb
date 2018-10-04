@@ -8,7 +8,7 @@
 <%= link_to "Trip Passenger: #{@trip.passenger.name}", passenger_path(@trip.passenger.id)%>
 
 <%= "Trip Cost: #{@trip.currency}" %>
-<% if @trip.rating == nil%>
+<% if @trip.rating == 0 %>
 <%= link_to "Rate and Complete Trip", complete_trip_path(@trip.id), method: :patch %>
 <% else %>
 <%= "Trip Rating: #{@trip.rating}" %>
