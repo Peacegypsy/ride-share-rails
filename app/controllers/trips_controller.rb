@@ -45,8 +45,17 @@ class TripsController < ApplicationController
     end
   end
 
-end
-def trip_params
-  return params.require(:trip).permit(:rating)
+  def rate_trip
+    @trip = Trip.find_by(id: params[:id].to_i)
+    @trip.cost = rand(1000..9999)
+    @trip.save
+    @trip.driver.update(status: "available")
+  end
+
+  private
+
+  def trip_params
+    return params.require(:trip).permit(:rating)
+  end
 
 end

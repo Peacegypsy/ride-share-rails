@@ -7,7 +7,7 @@
   Passenger ID : <%= @passenger.id %>
 <p><% @passenger.trips.each do |trip|%>
   <%= link_to "Trip Details", trip_path(trip.id)%>
-  Trip ID: <%= trip[:id] %> Trip Date: <%= trip[:date] %> Trip Rating: <%= trip[:rating] %>
+  Trip ID: <%= trip[:id] %> Trip Date: <%= trip[:date] %> Trip Rating: <%= trip[:rating]  %> Trip Cost: <%= trip.currency %>
   <p> <% x += trip[:cost]  %></p>
   <% end %>
   <p>Total Spent on Rides: $<%= x/100.0 %></p>
