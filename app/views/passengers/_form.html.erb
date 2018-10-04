@@ -1,5 +1,13 @@
 <h1><%= action_name  %></h1>
-
+<% if @passenger.errors.any? %>
+  <ul >
+    <% @passenger.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 <%= form_with model: @passenger, class: "passenger-form" do |f|%>
 <p>Please change the following information to update the passenger:</p>
 <%= f.label :name %>
