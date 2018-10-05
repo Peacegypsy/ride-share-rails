@@ -58,7 +58,7 @@ class TripsController < ApplicationController
       redirect_to passengers_path
     end
   end
-  
+
   private
 
   def trip_params
