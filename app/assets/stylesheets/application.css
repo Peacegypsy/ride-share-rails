@@ -41,15 +41,16 @@ body {
   }
 
   header :link, header :active{
-    color: #483D3F;
+    color: #FFFFFF;
     text-decoration: none;
     font-family: Helvetica;}
 
     header :hover{
       text-decoration: none;
-      color: blue;
+      color: black;
     }
 h3 :link{
   font-size: 1em;
   text-decoration: none;
+  color: #FFFFFF;
 }
