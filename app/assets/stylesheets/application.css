@@ -34,11 +34,15 @@ body {
     list-style-type: none;
     position: sticky;
     justify-content: space-around;
-    text-align: left;
+    padding-top: 20px;
     font-family: Helvetica;
     width: 100%;
-    margin-left: 10px;
-
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 45px;
+    width: 100%;
+    border: 1px solid white;
+    background-color: #E8EFE3;
   }
   .main {
     font-size: 2em;
@@ -48,10 +52,11 @@ body {
     color: black;
     text-decoration: none;
     font-family: Helvetica;
-  color: #36393B;}
+    color: #36393B;}
+
 
     header :hover{
-      font-size: 1.5em;
+      font-size: 1.25em;
       text-decoration: none;
       color: #AFD0D6;
     }
@@ -62,15 +67,31 @@ body {
     }
     h3 :hover{
       text-decoration: none;
-      font-size: 1.5em;
+      font-size: 1.25em;
       color: #AFD0D6;
 
     }
-    table{
+    table {
+      border-collapse: collapse;
       table-layout: auto;
-      width: 80%;
+      width: auto;
+      padding: 10px;
+      border-style: solid;
+      border-color: #36393B;
     }
-.passform{
-  font-size: 1em;
-  font-style: italic;
-}
+    table :link, h3 :active, h3 :visited{
+      font-size: 1em;
+      text-decoration: none;
+      color: #36393B;
+    }
+
+     td{
+       text-align: center;
+      border-width: thin;
+      border-style: solid;
+      border-color: #36393B;
+    }
+    .passform{
+      font-size: 1em;
+      font-style: italic;
+    }
