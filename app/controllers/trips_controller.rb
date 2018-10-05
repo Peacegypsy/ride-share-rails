@@ -51,6 +51,14 @@ class TripsController < ApplicationController
     @trip.driver.update(status: "available")
   end
 
+  def destroy
+    id = params[:id]
+    trip = Trip.find_by(id: id)
+    if trip.destroy
+      redirect_to passengers_path
+    end
+  end
+  
   private
 
   def trip_params
