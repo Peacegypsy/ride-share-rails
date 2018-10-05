@@ -15,6 +15,7 @@
   <li><%= "Trip passenger: #{@trip.passenger_id}" %></li>
 </ul>
 
+<!-- why is this rendering if they don't fill out a rating on the rate_trip page??? -->
 <%= form_with model: @trip do |f| %>
 <%= f.label :cost, "Cost: " %>
 <%= f.text_field :cost %>
