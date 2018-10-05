@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RideShareRails</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>RideShareRails</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <meta charset="UTF-8">
-   <link href="lib/assets/stylesheets.css" rel="stylesheet">
-  </head>
+  <meta charset="UTF-8">
+  <link href="lib/assets/stylesheets.css" rel="stylesheet">
+</head>
 
-  <body>
-    <header>
-      <%= link_to "RideShare Rails", "/main" %>
-       <%= link_to "Drivers", drivers_path %>
-       <%= link_to "Passengers", passengers_path %>
-       <%= link_to "New Passenger", new_passenger_path %>
-       <%= link_to "New Driver", new_driver_path %>
-       <%= link_to "All Trips", trips_path %>
-    </header>
-    <%= yield %>
-  </body>
+<body>
+  <header>
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn"><%= link_to "RideShare Rails Home", "/main" %></button>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn"><%= link_to "Passengers", passengers_path %></button>
+        <div class="dropdown-content">
+          <%= link_to "New Passenger", new_passenger_path %>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn"><%= link_to "Drivers", drivers_path %></button>
+        <div class="dropdown-content">
+          <%= link_to "New Driver", new_driver_path %>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn"><%= link_to "All Trips", trips_path %></button>
+      </div>
+
+    </nav>
+  </header>
+
+  <%= yield %>
+</body>
 </html>
