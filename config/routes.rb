@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- # root "static#show"
+ root "static#main"
   resources :drivers
 
   # /passengers/:passenger_id/trips/create
