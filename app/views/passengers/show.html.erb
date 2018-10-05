@@ -1,15 +1,27 @@
 <% if @passenger.nil? %>
-  <h1> 404 Not found</h1>
+<h1> 404 Not found</h1>
 <% else %>
-  <h1><%= @passenger.name %></h1>
-  <p><%= @passenger.phone_num %> </p>
-  <p><% x = 0 %>
-  </p>
-<p><% @passenger.trips.each do |trip|%>
-  Trip ID: <%= trip[:id] %> Trip Date: <%= trip[:date] %> Trip Rating: <%= trip[:rating] %>
-    <p> <% x += trip[:cost]  %><% end %>
- </p><p>Total Spend on Rides:$ <%= x/100.0 %>
- </p>
-  <%= link_to "Edit Passenger #{@passenger.name}:#{@passenger.id}", edit_passenger_path(@passenger.id)%>
-<div></div>
+<h3><%= @passenger.name %></h3>
+<h3><%= @passenger.phone_num %> </h3>
+
+<h3>Trips: </h3>
+<table>
+  <th>Trip ID</th>
+  <th>Date</th>
+  <th>Rating</th>
+
+  <% x = 0 %>
+  <% @passenger.trips.each do |trip|%>
+  <% x += trip[:cost]  %>
+  <%= "Total Spend on Rides:$"%><%= x/100.0 %>
+
+  <tr>
+    <th><%=  trip.id %></th>
+    <th><%=  trip.date %></th>
+    <th><%=  trip.rating %></th>
+  </tr>
+  <% end %>
+</table>
 <% end %>
+
+<h3><%= link_to "Edit Passenger #{@passenger.name}:#{@passenger.id}", edit_passenger_path(@passenger.id)%></h3>
