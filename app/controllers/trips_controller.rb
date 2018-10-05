@@ -45,11 +45,25 @@ class TripsController < ApplicationController
     end
   end
 
+# This works, but with only with no validation
+# This doesn't work correctly if the user inputs nothing
   def rate_trip
     @trip = Trip.find_by(id: params[:id].to_i)
     @trip.update(cost: rand(1000..9999))
     @trip.driver.update(status: "available")
   end
+
+# This doesn't work at all
+  # def rate_trip
+  #   @trip = Trip.find_by(id: params[:id].to_i)
+  #   if @trip.update(rating: params[:trip][:rating])
+  #     @trip.update(cost: rand(1000..9999))
+  #     @trip.driver.update(status: "available")
+  #   else
+  #     render :rate_trip
+  #   end
+  # end
+
 
   def destroy
     id = params[:id]
