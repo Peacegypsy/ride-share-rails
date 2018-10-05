@@ -47,26 +47,14 @@ class TripsController < ApplicationController
 
   def rate_trip
     @trip = Trip.find_by(id: params[:id].to_i)
-    if @trip.save
-      @trip.cost = rand(1000..9999)
-      @trip.driver.update(status: "available")
-    else
-      render :rate_trip
-    end
-  end
-
-  def destroy
-    id = params[:id]
-    trip = Trip.find_by(id: id)
-    if trip.destroy
-      redirect_to passengers_path
-    end
+    @trip.update(cost: rand(1000..9999))
+    @trip.driver.update(status: "available")
   end
 
   private
 
   def trip_params
-    return params.require(:trip).permit(:rating, :cost)
+    return params.require(:trip).permit(:rating)
   end
 
 end
