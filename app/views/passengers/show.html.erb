@@ -4,21 +4,24 @@
 <h3><%= @passenger.name %></h3>
 <h3><%= @passenger.phone_num %> </h3>
 
-
-<p class="pass-detail" >
+<h3>Trips: </h3>
+<table>
+  <th>Trip ID</th>
+  <th>Date</th>
+  <th>Rating</th>
 
   <% x = 0 %>
-  Passenger ID : <%= @passenger.id %>
-  <p><% @passenger.trips.each do |trip|%>
-    <%= link_to "Trip Details", trip_path(trip.id)%>
-    Trip ID: <%= trip[:id] %> Trip Date: <%= trip[:date] %> Trip Rating: <%= trip[:rating] %>
-    <p> <% x += trip[:cost]  %></p>
-    <% end %>
-    <p>Total Spent on Rides: $<%= x/100.0 %></p>
-  </p>
+  <% @passenger.trips.each do |trip|%>
+  <% x += trip[:cost]  %>
+  <%= "Total Spend on Rides:$"%><%= x/100.0 %>
 
-  <h4><%= link_to "Add a New Trip", passenger_trips_path(@passenger.id), method: :post%> </h4>
-  <h4><%= link_to "Edit Passenger #{@passenger.name}", edit_passenger_path(@passenger.id)%></h4>
-  <h4><%= link_to "Delete", remove_passenger_path(@passenger.id), method: :patch, data: { confirm: "Please confirm that you want to delete this passenger." } %></h4>
-
+  <tr>
+    <th><%=  trip.id %></th>
+    <th><%=  trip.date %></th>
+    <th><%=  trip.rating %></th>
+  </tr>
   <% end %>
+</table>
+<% end %>
+
+<h3><%= link_to "Edit Passenger #{@passenger.name}:#{@passenger.id}", edit_passenger_path(@passenger.id)%></h3>

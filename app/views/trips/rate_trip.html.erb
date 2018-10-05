@@ -1,0 +1,7 @@
+<%= form_with model: @trip do |f| %>
+
+<%= f.label :rating, "Rating: " %>
+<%= f.text_field :rating %>
+
+<%= f.submit "Rate and Complete Trip" %>
+<% end %>

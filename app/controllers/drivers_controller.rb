@@ -30,7 +30,7 @@ class DriversController < ApplicationController
     @driver.name = params[:driver][:name]
     @driver.vin = params[:driver][:vin]
     if @driver.save
-      redirect_to drivers_path
+      redirect_to driver_path(@driver.id)
     else
       render :edit
     end

@@ -12,5 +12,8 @@ Rails.application.routes.draw do
 
   patch '/passengers/:id/take_offline', to: 'passengers#take_offline', as: 'remove_passenger'
 
+  patch '/trip/:id/rate_trip', to: 'trips#rate_trip', as: 'complete_trip'
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

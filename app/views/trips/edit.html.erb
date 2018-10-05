@@ -1,1 +1,27 @@
-<%= render partial: "form", locals: { action_name: "Edit Trip", button_title: 'Save' } %>
+<% if @trip.errors.any? %>
+  <ul >
+    <% @trip.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h1><%= action_name  %></h1>
+<ul>
+  <li><%= "Trip date: #{@trip.date}" %></li>
+  <li><%= "Trip driver: #{@trip.driver_id}" %></li>
+  <li><%= "Trip passenger: #{@trip.passenger_id}" %></li>
+</ul>
+
+<!-- why is this rendering if they don't fill out a rating on the rate_trip page??? -->
+<%= form_with model: @trip do |f| %>
+<%= f.label :cost, "Cost: " %>
+<%= f.text_field :cost %>
+
+<%= f.label :rating, "Rating: " %>
+<%= f.text_field :rating %>
+
+<%= f.submit  "Edit"%>
+<% end %>
