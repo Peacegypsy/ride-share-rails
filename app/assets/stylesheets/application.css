@@ -54,3 +54,7 @@ h3 :link{
   text-decoration: none;
   color: #FFFFFF;
 }
+table{
+table-layout: auto;
+width: 80%;
+}
