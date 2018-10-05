@@ -9,7 +9,7 @@
 
 <%= "Trip Cost: #{@trip.currency}" %>
 <% if @trip.rating == nil %>
-<%= link_to "Rate and Complete Trip", complete_trip_path(@trip.id), method: :patch %>
+<%= link_to "Rate and Complete Trip", complete_trip_path(@trip.id) %>
 <% else %>
 <%= "Trip Rating: #{@trip.rating}" %>
 <% end %>

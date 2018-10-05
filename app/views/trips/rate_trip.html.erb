@@ -8,7 +8,7 @@
   </ul>
 <% end %>
 
-<%= form_with model: @trip do |f| %>
+<%= form_with url: complete_trip_path, method: :patch do |f| %>
 
 <%= f.label :rating, "Rating: " %>
 <%= f.text_field :rating %>
