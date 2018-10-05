@@ -1,15 +1,76 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+body {
+  padding: 60px;
+  background-color: #E0E2DB;
+  font-family: Helvetica;
+  margin-left: 20px;}
+  p {
+    font-family: Helvetica;
+    font-size: 1em;
+  }
+  h1 {
+    font-size: 2em;
+    font-family: Helvetica;
+    color: black;
+  }
+
+  header {
+    display: inline-flex;
+    list-style-type: none;
+    position: sticky;
+    justify-content: space-around;
+    text-align: left;
+    font-family: Helvetica;
+    width: 100%;
+    margin-left: 10px;
+
+  }
+  .main {
+    font-size: 2em;
+
+  }
+  header :link, header :active, header :visited{
+    color: black;
+    text-decoration: none;
+    font-family: Helvetica;
+  color: #36393B;}
+
+    header :hover{
+      font-size: 1.5em;
+      text-decoration: none;
+      color: #AFD0D6;
+    }
+    h3 :link, h3 :active,h3 :visited{
+      font-size: 1em;
+      text-decoration: none;
+      color: #36393B;
+    }
+    h3 :hover{
+      text-decoration: none;
+      font-size: 1.5em;
+      color: #AFD0D6;
+
+    }
+    table{
+      table-layout: auto;
+      width: 80%;
+    }
+.passform{
+  font-size: 1em;
+  font-style: italic;
+}

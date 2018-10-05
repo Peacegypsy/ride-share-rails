@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   end
 
   resources :trips
-
+  get "/:page" => "static#show"
+  
   patch '/drivers/:id/take_offline', to: 'drivers#take_offline', as: 'remove_driver'
 
   patch '/passengers/:id/take_offline', to: 'passengers#take_offline', as: 'remove_passenger'
