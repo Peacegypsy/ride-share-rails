@@ -10,7 +10,7 @@ class TripsController < ApplicationController
       if driver.nil?
         render :drivernotfound, status: :not_found
       else
-        @trip = Trip.new( driver_id: driver.id, passenger_id: params[:passenger_id], date: Date.today, cost: 0, rating: 0)
+        @trip = Trip.new( driver_id: driver.id, passenger_id: params[:passenger_id], date: Date.today, cost: 0)
         @trip.save
         driver.update(status: "unavailable")
         redirect_to passenger_path(params[:passenger_id])
@@ -47,14 +47,14 @@ class TripsController < ApplicationController
 
   def rate_trip
     @trip = Trip.find_by(id: params[:id].to_i)
-    @trip.cost = rand(1000..9999)
-    @trip.save
+    @trip.update(cost: rand(1000..9999))
     @trip.driver.update(status: "available")
   end
 
   def destroy
     id = params[:id]
     trip = Trip.find_by(id: id)
+    trip.driver.update(status: "available")
     if trip.destroy
       redirect_to passengers_path
     end
@@ -63,7 +63,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    return params.require(:trip).permit(:rating, :cost)
+    return params.require(:trip).permit(:rating)
   end
 
 end
