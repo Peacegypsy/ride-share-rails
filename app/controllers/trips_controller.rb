@@ -54,7 +54,7 @@ class TripsController < ApplicationController
   def destroy
     id = params[:id]
     trip = Trip.find_by(id: id)
-    trip.driver.update(status: "available")
+    trip.driver.update(status: "available") if trip.rating.nil?
     if trip.destroy
       redirect_to passengers_path
     end
