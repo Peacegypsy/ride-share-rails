@@ -112,7 +112,7 @@ color: white;
   flex-direction: column;
   height: 50px;
   width: 150px;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .boxa{
   text-align: center;
