@@ -1,16 +1,17 @@
 <% if @driver.nil? %>
 <h1> 404 Not found</h1>
 <% else %>
+<div class="driverbox">
 <h3>Driver: <%=@driver[:name]%></h3>
 <h3>Status: <%=@driver[:status]%></h3>
-<h3>Total Earnings: <%="$#{@driver.total_earnings}"%></h3>
-
 <h3>Average Rating: <%= @driver.average_rating %> </h3>
+</div>
 
+<h3>Total Earnings: <%="$#{@driver.total_earnings}"%></h3>
 <% if @driver.trips.length == 0  %>
 <h3>Trips: None</h3>
 <% else %>
-<h3>Trips: </h3>
+<h3>Driver Trips: </h3>
 <table>
   <th>View Trip</th>
   <th>Trip ID</th>
@@ -22,13 +23,13 @@
 
   <% @driver.trips.each do |trip| %>
   <tr>
-    <th><%= link_to "Trip Details", trip_path(trip.id)%></th>
-    <th><%=  trip.id %></th>
-    <th><%=  trip.driver_id  %></th>
-    <th><%=  trip.passenger_id %></th>
-    <th><%=  trip.date %></th>
-    <th><%=  trip.rating %></th>
-    <th><%=  trip.currency %></th>
+    <td><%= link_to "Trip Details", trip_path(trip.id)%></td>
+    <td><%=  trip.id %></td>
+    <td><%=  trip.driver_id  %></td>
+    <td><%=  trip.passenger_id %></td>
+    <td><%=  trip.date %></td>
+    <td><%=  trip.rating %></td>
+    <td><%=  trip.currency %></td>
   </tr>
   <% end %>
 </table>

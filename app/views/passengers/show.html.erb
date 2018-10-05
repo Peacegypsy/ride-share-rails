@@ -9,12 +9,8 @@
   <th>Trip ID</th>
   <th>Date</th>
   <th>Rating</th>
-
-  <% x = 0 %>
+  <%= "Total Spend on Rides: $#{@passenger.total_spent}" %>
   <% @passenger.trips.each do |trip|%>
-  <% x += trip[:cost]  %>
-  <%= "Total Spend on Rides:$"%><%= x/100.0 %>
-
   <tr>
     <th><%= link_to trip.id, trip_path(trip.id)%></th>
     <th><%=  trip.date %></th>
