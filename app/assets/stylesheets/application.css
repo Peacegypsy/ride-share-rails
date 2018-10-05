@@ -124,6 +124,14 @@ color: white;
   width: 150px;
   justify-content: space-between;
 }
-.main{
-  margin-left: 300px;
+body > a{
+padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 2em;
+  color:#36393B;
+  text-decoration: none;
+  align-items: center;
+  margin-left: 20px;
 }
