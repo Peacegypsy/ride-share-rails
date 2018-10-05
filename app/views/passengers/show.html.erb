@@ -12,12 +12,13 @@
   <%= "Total Spend on Rides: $#{@passenger.total_spent}" %>
   <% @passenger.trips.each do |trip|%>
   <tr>
-    <td><%=  trip.id %></td>
-    <td><%=  trip.date %></td>
-    <td><%=  trip.rating %></td>
+    <th><%= link_to trip.id, trip_path(trip.id)%></th>
+    <th><%=  trip.date %></th>
+    <th><%=  trip.rating %></th>
   </tr>
   <% end %>
 </table>
 <% end %>
 
 <h3><%= link_to "Edit Passenger #{@passenger.name}:#{@passenger.id}", edit_passenger_path(@passenger.id)%></h3>
+ <h4><%= link_to "Add a New Trip", passenger_trips_path(@passenger.id), method: :post%> </h4>
