@@ -30,13 +30,14 @@ body {
 
   header {
     display: inline-flex;
-    flex: auto;
     list-style-type: none;
     position: sticky;
     justify-content: space-around;
-    text-align: center;
+    text-align: left;
     font-family: Helvetica;
     width: 100%;
+    margin-left: 10px;
+
   }
 
   header :link, header :active{
@@ -48,3 +49,7 @@ body {
       text-decoration: none;
       color: blue;
     }
+h3 :link{
+  font-size: 1em;
+  text-decoration: none;
+}
