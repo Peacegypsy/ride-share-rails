@@ -15,9 +15,10 @@
 */
 
 body {
-  padding-top: 60px;
+  padding: 60px;
   background-color: #E0E2DB;
-  font-family: Helvetica;}
+  font-family: Helvetica;
+  margin-left: 20px;}
   p {
     font-family: Helvetica;
     font-size: 1em;
@@ -25,7 +26,7 @@ body {
   h1 {
     font-size: 2em;
     font-family: Helvetica;
-    color: #46351D;
+    color: black;
   }
 
   header {
@@ -39,22 +40,37 @@ body {
     margin-left: 10px;
 
   }
+  .main {
+    font-size: 2em;
 
-  header :link, header :active{
-    color: #FFFFFF;
+  }
+  header :link, header :active, header :visited{
+    color: black;
     text-decoration: none;
-    font-family: Helvetica;}
+    font-family: Helvetica;
+  color: #36393B;}
 
     header :hover{
+      font-size: 1.5em;
       text-decoration: none;
-      color: black;
+      color: #AFD0D6;
     }
-h3 :link{
+    h3 :link, h3 :active,h3 :visited{
+      font-size: 1em;
+      text-decoration: none;
+      color: #36393B;
+    }
+    h3 :hover{
+      text-decoration: none;
+      font-size: 1.5em;
+      color: #AFD0D6;
+
+    }
+    table{
+      table-layout: auto;
+      width: 80%;
+    }
+.passform{
   font-size: 1em;
-  text-decoration: none;
-  color: #FFFFFF;
-}
-table{
-table-layout: auto;
-width: 80%;
+  font-style: italic;
 }

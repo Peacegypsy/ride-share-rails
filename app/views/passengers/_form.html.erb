@@ -10,7 +10,8 @@
   </ul>
 <% end %>
 <%= form_with model: @passenger, class: "passenger-form" do |f|%>
-<p>Please change the following information to update the passenger:</p>
+
+<p class="passform">Please change the following information to update the passenger:>
 <%= f.label :name %>
 <%= f.text_field :name %>
 
@@ -18,4 +19,4 @@
 <%= f.text_field :phone_num %>
 
 <%= f.submit button_title, class: "passenger-button" %>
-<% end %>
+<% end %></p>
