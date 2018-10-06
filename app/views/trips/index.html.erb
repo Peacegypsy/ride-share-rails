@@ -10,12 +10,12 @@
 
 <% @trips.each do |trip| %>
 <tr>
-  <th><%= link_to "#{trip.id}", trip_path(trip.id) %> </th>
-  <th><%= link_to " #{trip.date}", trip_path(trip.id) %></th>
-  <th><%= link_to "#{trip.driver_id}", trip_path(trip.id) %></th>
-  <th><%= link_to " #{trip.passenger_id}", trip_path(trip.id) %></th>
-  <th><%= link_to " #{trip.rating}",trip_path(trip.id) %>  </th>
-  <th><%= link_to "#{trip.currency}", trip_path(trip.id) %>  </th>
+  <td><%= link_to "#{trip.id}", trip_path(trip.id) %> </td>
+  <td><%= link_to " #{trip.date}", trip_path(trip.id) %></td>
+  <td><%= link_to "#{trip.driver_id}", trip_path(trip.id) %></td>
+  <td><%= link_to " #{trip.passenger_id}", trip_path(trip.id) %></td>
+  <td><%= link_to " #{trip.rating}",trip_path(trip.id) %>  </td>
+  <td><%= link_to "#{trip.currency}", trip_path(trip.id) %>  </td>
 </tr>
 <% end %>
 </table>

@@ -1,14 +1,16 @@
 <%= form_with model: @passenger do |f| %>
-  <p>Please provide the following information :</p>
-<div class="pformbox">
-  <%= f.label :passenger_name %>
-  <%= f.text_field :name%>
-</div>
-<div class="boxa"
+<p>Please provide the following information :</p>
+<div class="passbox">
+  <div class="pformbox">
+    <%= f.label :passenger_name %>
+    <%= f.text_field :name%>
+  </div>
+  <div class="boxa"
   <%= f.label :phone_number %>
   <%= f.text_field :phone_num %>
 </div>
-
+</div>
+<div class="npbutton">
   <%= f.submit "Create", class: "passenger-button" %>
-
+</div>
 <% end %>

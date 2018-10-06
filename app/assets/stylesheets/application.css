@@ -103,24 +103,68 @@ td {
 }
 
 .pformbox {
-  font-size: 1em;
-  border: 1px solid black;
-  display: inline-flex;
-  flex-direction: column;
-  height: 50px;
-  width: 150px;
-  justify-content: space-around;
-}
-
-.boxa {
   text-align: center;
   font-size: 1em;
-  border: 1px solid black;
   display: inline-flex;
   flex-direction: column;
   height: 50px;
   width: 150px;
   justify-content: space-between;
+  padding: 5px;
+}
+
+.boxa {
+  text-align: center;
+  font-size: 1em;
+  display: inline-flex;
+  flex-direction: column;
+  height: 50px;
+  width: 150px;
+  justify-content: space-between;
+  padding: 5px;
+}
+.passbox{
+  display: inline-flex;
+  position: relative;
+  padding: 3px;
+}
+.npbutton{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-left: 135px;
+}
+.drbox{
+  border: 1px solid black;
+  display: inline-flex;
+  position: relative;
+  padding: 3px;
+}
+.boxb{
+  text-align: center;
+  font-size: 1em;
+  display: inline-flex;
+  flex-direction: column;
+  height: 50px;
+  width: 150px;
+  justify-content: space-between;
+  padding: 5px;
+}
+.dformbox{
+  margin: 1px solid black;
+  text-align: center;
+  font-size: 1em;
+  flex-direction: column;
+  height: 150px;
+  width: 150px;
+  justify-content: space-between;
+  padding: 5px;
+}
+.ndbutton{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: 35px;
 }
 
 /* Dropdown Button */

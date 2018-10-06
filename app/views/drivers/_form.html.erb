@@ -1,19 +1,23 @@
 <% if @driver.errors.any? %>
-  <ul >
-    <% @driver.errors.each do |column, message| %>
-      <li>
-        <strong><%= column.capitalize %></strong> <%= message %>
-      </li>
-    <% end %>
-  </ul>
+<ul >
+  <% @driver.errors.each do |column, message| %>
+  <li>
+    <strong><%= column.capitalize %></strong> <%= message %>
+  </li>
+  <% end %>
+</ul>
 <% end %>
-
-<%= form_with model: @driver do |f| %>
-<%= f.label :name, "Name: " %>
-<%= f.text_field :name %>
-
-<%= f.label :vin, "VIN: " %>
-<%= f.text_field :vin %>
-
-<%= f.submit button_title %>
+<div class="driverbox">
+  <div class="dformbox">
+    <%= form_with model: @driver do |f| %>
+    <%= f.label :name, "Name: " %>
+    <%= f.text_field :name %>
+    <div class="boxb"
+    <%= f.label :vin, "VIN: " %>
+    <%= f.text_field :vin %>
+  </div>
+</div>
+<div class="ndbutton">
+  <%= f.submit button_title %>
+</div>
 <% end %>

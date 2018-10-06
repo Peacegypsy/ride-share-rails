@@ -3,9 +3,9 @@
 <% else %>
   <h1>Trip ID: <%= @trip.id %></h1>
 <%= "Trip Date: #{@trip.date}" %>
-<h2>Trip Driver:  <%= link_to @trip.driver.name,  driver_path(@trip.driver.id) %></h2>
+<h3>Trip Driver:  <%= link_to @trip.driver.name,  driver_path(@trip.driver.id) %></h3>
 
-<h2>Trip Passenger:  <%= link_to @trip.passenger.name, passenger_path(@trip.passenger.id)%></h2>
+<h3>Trip Passenger:  <%= link_to @trip.passenger.name, passenger_path(@trip.passenger.id)%></h3>
 
 <%= "Trip Cost: #{@trip.currency}" %>
 <% if @trip.rating == nil %>
